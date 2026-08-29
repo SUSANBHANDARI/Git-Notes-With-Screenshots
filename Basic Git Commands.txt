@@ -93,12 +93,12 @@
 ## Change the remote URL
 
 - To change a remote url. For example: The remote is origin. Then you can change it as: 
-  {git remote set-url origin <url>}
+  {git remote set-url origin <new-url>}
 
 - Then verify the change:
   {git remote -v}
 
 - Similarly, we have alternative way which is to remove and re-add the remote
   {git remote remove origin}
-  {git remote add origin https://github.com/new-user/new-repo.git}
+  {git remote add origin <new-url>}
 
