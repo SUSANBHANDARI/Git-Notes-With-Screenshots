@@ -1,0 +1,60 @@
+## Some Commands Used in Git
+
+* code . - to open vs code from terminal
+
+* touch <filename> - to create file of some extension from terminal
+
+* ls - to show list of files in the working directory
+
+* {git add -A} is the command used to put all the files in staging area
+
+* {git commit} - Initial commit, to type press i, to escape press esc key the :wq and enter
+
+* {git commit -m "some message"} - This command makes it simpler to commit
+
+* {git checkout <filename>} helps to match the changed file in your working directory with your last commit
+
+* {git checkout -f} helps to match all the changed files in your working directory with your last commit
+
+* {git log -p -<number>} shows your last <number> commits, sometimes you have to use q to exit
+
+* {git diff} - compares working directory with staging area
+
+* {git diff --staged} - compares staging area with last commit
+
+* {git rm <filename>} - removes file from working directory and staging area
+
+* {git rm --cached <filename>} - removes file from staging area
+
+* touch .gitignore - the word files described in this file will be ignored
+for example : mylogs.log, *.log, *.cpp, /mylogs.log (ignores only at folder where .gitignore is located), ignore/ (ignore is folder's name)
+
+* {git branch <branch-name>} - creates new branch
+
+* {git branch} - show all branches
+
+* {git checkout <branch-name>} - to switch to another branch
+
+* {git checkout -b <branch-name>} - creates new branch and immediately switches to that branch
+
+* {git merge <another branch-name>} - merges the changes of another branch with current branch
+
+* {git branch -d branch-name} - delete a local branch
+
+* {git branch -D branch-name} - to force deletion
+
+* {git push origin --delete branch-name} - delete a remote branch:
+
+* {git remote add origin <url>} - will add remote named origin and origin becomes the short form of the following url which can be used later
+
+* {git remote} - shows remotes
+
+* {git remote -v} - shows the url of remote (fetch,push)
+
+* {git push origin <branch>} - pushes <branch> contents to origin or its url
+
+* {git push -u origin <branch>} - next time it will push contents of the same branch as we can write [git push] only and the terminal will understand it
+
+* {git clone <url>} - copy the repository or contents from the url. 
+
+* {git clone <url> <foldername>} - copy the repository or contents from the url but the folder's name will be of your choosing 

@@ -1,0 +1,90 @@
+## Basic Git Commands
+
+1. git init  
+- Create new folder to work on. Open it with Git Bash. Check if master/main is in folder. That     means git is already initialized.
+
+2. git config --list
+-  git config --global user.name "Your Name" , (Next Command) git config --global user.email "Your email" (skip if already setup)
+
+3. git add <filename>
+- Whenever you create a file, it is untracked by the git, so {git add <filename>} command helps the file to be staged which is a step before commit of those records. Also use {git status} command to know state of files in the folder you are working on. 
+
+- Similarly to add all the files from the working directory, use the following command:
+  {git add -A}  
+
+4. git commit
+- now git have started looking into the changes, it's time to save the changes in commit.
+  {git commit -m "some message"}
+
+- We have another way also where we can directly commit the file without staging it but we have to add the file at least once before using the below command
+  {git commit -a -m "some message"}
+
+5. check history
+- To check all the commit history, we can use following command :
+  {git log}
+  {git log --oneline}
+  {git log -p -1} 
+
+  
+6. git push
+- Create a new repository in your git hub and use the following command :
+  {git remote add origin <url you get after creating new repository>}
+  {git push origin <branch name>}  
+  branch name can be (default)master or branch you have created.
+
+7. git clone
+- To load the copy repository of other's GitHub account. Command used is :
+  {git clone <url of the related repository>}
+
+
+## a. Remove the most recent commit
+
+- If you want to remove the last commit but keep its changes:
+  {git reset --soft HEAD~1}
+
+- If you want to remove the commit and its changes:
+  {git reset --hard HEAD~1}
+
+- If the commit was already pushed to GitHub:
+  {git push --force}
+
+
+## b. Remove several recent commits
+
+- For example, to remove the last 3 commits:
+  {git reset --hard HEAD~3}
+
+  Then:
+  {git push --force}
+
+  --hard permanently removes the changes from those commits from your local working tree.
+
+
+## c. Remove a specific commit in the middle
+
+- If you have something like:
+  Commit A
+  Commit B
+  Commit C  ← remove this
+  Commit D
+  Commit E
+
+- Use interactive rebase:
+  {git rebase -i HEAD~5}
+
+- You'll see something like:
+  pick abc123 Commit A
+  pick def456 Commit B
+  pick ghi789 Commit C
+  pick jkl012 Commit D
+  pick mno345 Commit E
+
+- Change the commit you want to remove from:
+  pick ghi789 Commit C
+
+- to:
+  drop ghi789 Commit C
+
+- Save and close the editor.
+  Then push the rewritten history:
+  {git push --force}
